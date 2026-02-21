@@ -41,6 +41,35 @@ TENSE_SUFFIXES = {
     Tense.FUTURE: "um",
 }
 
+# Vocabulary: English to Testlang
+VOCAB = {
+    # Animals
+    "monkey": "simko",
+    "dog": "hund",
+    "cat": "kat",
+    
+    # Nouns
+    "food": "nurt",
+    "house": "dom",
+    "water": "akva",
+    "sky": "siel",
+    
+    # Verbs (roots)
+    "sleep": "dorm",
+    "run": "kur",
+    "dance": "dans",
+    "see": "vid",
+    "eat": "et",
+    "build": "bild",
+    "climb": "klim",
+    
+    # Adjectives
+    "big": "grond",
+    "cold": "frij",
+    "beautiful": "bel",
+    "funny": "komik",
+}
+
 
 class IntransitiveSentence(Sentence):
     """A sentence with just a subject and verb (e.g., 'I sleep')"""
@@ -91,6 +120,8 @@ class TransitiveSentence(Sentence):
                                  object_noun="nurt", verb_root="et", tense=Tense.PAST)),
             ("We will build a house.", cls(subject_person=Person.FIRST, subject_number=Number.PLURAL,
                                           object_noun="dom", verb_root="bild", tense=Tense.FUTURE)),
+            ("The monkey climbs.", cls(subject_person=Person.THIRD, subject_number=Number.SINGULAR,
+                                      object_noun="simko", verb_root="klim", tense=Tense.PRESENT)),
         ]
 
 
@@ -112,6 +143,7 @@ class AdjectiveSentence(Sentence):
             ("The cat is big.", cls(noun="kat", adjective="grond", tense=Tense.PRESENT)),
             ("The water was cold.", cls(noun="akva", adjective="frij", tense=Tense.PAST)),
             ("The sky will be beautiful.", cls(noun="siel", adjective="bel", tense=Tense.FUTURE)),
+            ("The monkey is funny.", cls(noun="simko", adjective="komik", tense=Tense.PRESENT)),
         ]
 
 
